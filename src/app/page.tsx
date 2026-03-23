@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MobileMenuDemo } from "@/components/mobile-menu-demo";
 
 const navigation = [
@@ -178,29 +179,29 @@ const uiPatterns = [
 
 const labSteps = [
   {
-    title: "Refaça o hero",
+    title: "Montar o hero",
     description:
-      "Troque título, subtítulo e CTA para um produto fictício e mantenha a mesma hierarquia visual.",
+      "Na página /product, troque título e subtítulo (e os CTAs, se quiser) e refine layout responsivo seguindo o guia em /tarefa1.",
   },
   {
     title: "Crie uma paleta nova",
     description:
-      "Escolha uma técnica cromática e aplique uma variação própria mantendo contraste legível.",
+      "Escolha uma técnica cromática no guia em /tarefa2 e aplique na página /product, mantendo contraste legível.",
   },
   {
     title: "Transforme o menu",
     description:
-      "Adapte o menu mobile para drawer lateral, bottom sheet ou menu em tela cheia.",
+      "Siga o guia em /tarefa3: drawer lateral, bottom sheet ou menu em tela cheia — idealmente na página /product.",
   },
   {
     title: "Modele uma dashboard",
     description:
-      "Reorganize os cards responsivos para um cenário como ecommerce, fintech ou curso online.",
+      "Siga o guia em /tarefa4: reorganize cards responsivos para ecommerce, fintech, curso online ou outro cenário.",
   },
   {
     title: "Feche o sistema de botões",
     description:
-      "Adicione versões disabled, loading e sucesso para consolidar o comportamento do componente.",
+      "Siga o guia em /tarefa5: versões disabled, loading e sucesso com Tailwind, a partir da seção Botões.",
   },
 ];
 
@@ -257,7 +258,7 @@ export default function Home() {
         </nav>
 
         <a
-          href="#laboratorio"
+          href="/tarefa1"
           className="inline-flex items-center justify-center rounded-full border border-[#cfbfa8] bg-white/85 px-4 py-2 text-sm font-semibold text-[#1f1a16] shadow-[0_20px_45px_-34px_rgba(66,41,22,0.55)] backdrop-blur transition hover:-translate-y-0.5 hover:border-[#d96b45]/40 hover:bg-white"
         >
           Abrir laboratório
@@ -757,7 +758,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="space-y-8">
+        <section id="padroes-ui" className="space-y-8">
           <SectionIntro
             eyebrow="Técnicas consolidadas"
             title="Boas práticas que valem em quase qualquer projeto"
@@ -804,9 +805,61 @@ export default function Home() {
                   className="rounded-[28px] border border-[#d7cbbb] bg-white/85 p-5 shadow-[0_20px_40px_-34px_rgba(66,41,22,0.45)]"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#1f1a16] font-display text-lg text-[#f9f4ec]">
-                      {index + 1}
-                    </div>
+                    {index === 0 ? (
+                      <Link
+                        href="/tarefa1"
+                        aria-label="Abrir tarefa 1 — Montar o hero"
+                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#1f1a16] transition hover:bg-[#2a241f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1f6f78]"
+                      >
+                        <span className="font-display text-lg leading-none text-[#f9f4ec]">
+                          {index + 1}
+                        </span>
+                      </Link>
+                    ) : index === 1 ? (
+                      <Link
+                        href="/tarefa2"
+                        aria-label="Abrir tarefa 2 — Crie uma paleta nova"
+                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#1f1a16] transition hover:bg-[#2a241f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1f6f78]"
+                      >
+                        <span className="font-display text-lg leading-none text-[#f9f4ec]">
+                          {index + 1}
+                        </span>
+                      </Link>
+                    ) : index === 2 ? (
+                      <Link
+                        href="/tarefa3"
+                        aria-label="Abrir tarefa 3 — Transforme o menu"
+                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#1f1a16] transition hover:bg-[#2a241f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1f6f78]"
+                      >
+                        <span className="font-display text-lg leading-none text-[#f9f4ec]">
+                          {index + 1}
+                        </span>
+                      </Link>
+                    ) : index === 3 ? (
+                      <Link
+                        href="/tarefa4"
+                        aria-label="Abrir tarefa 4 — Modele uma dashboard"
+                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#1f1a16] transition hover:bg-[#2a241f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1f6f78]"
+                      >
+                        <span className="font-display text-lg leading-none text-[#f9f4ec]">
+                          {index + 1}
+                        </span>
+                      </Link>
+                    ) : index === 4 ? (
+                      <Link
+                        href="/tarefa5"
+                        aria-label="Abrir tarefa 5 — Feche o sistema de botões"
+                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#1f1a16] transition hover:bg-[#2a241f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1f6f78]"
+                      >
+                        <span className="font-display text-lg leading-none text-[#f9f4ec]">
+                          {index + 1}
+                        </span>
+                      </Link>
+                    ) : (
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#1f1a16] font-display text-lg text-[#f9f4ec]">
+                        {index + 1}
+                      </div>
+                    )}
                     <h3 className="font-display text-2xl text-[#1f1a16]">
                       {step.title}
                     </h3>
